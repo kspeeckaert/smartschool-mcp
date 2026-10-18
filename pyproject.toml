@@ -1,0 +1,27 @@
+[project]
+name = "smartschool-mcp"
+dynamic = ["version"]
+description = "Read-only MCP server for Smartschool: unread messages, tasks and lessons (personal use)."
+readme = "README.md"
+requires-python = ">=3.10"
+authors = [{ name = "Kristof Speeckaert" }]
+dependencies = [
+    "mcp>=2.3.0,<3",
+    "smartschool[mfa]>=0.12.1",
+]
+
+[project.urls]
+Source = "https://github.com/kspeeckaert/smartschool-mcp"
+
+[project.scripts]
+smartschool-mcp = "smartschool_mcp.server:main"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.version]
+path = "src/smartschool_mcp/__init__.py"
+
+[tool.ruff]
+line-length = 130
